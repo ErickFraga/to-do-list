@@ -1,0 +1,41 @@
+#main { 
+    width: 30%;
+    margin: 0 auto;
+}
+#status    {
+    width: 45%;
+    float: left;
+}
+
+#remove  {
+    width: 45%;
+    margin-left: 55%;
+    color: var(--alizarin)
+}
+
+#title{
+    color: var(--midnight-blue);
+}
+
+#description {
+    color: var(--asbestos);
+    margin-left:2%;
+}
+
+.link {
+    text-align: center;
+    border-radius: 15px;
+    font-size: 2vmax;
+    font-weight: bold;
+}
+
+
+div.link:hover{
+    background-color:  var(--emerald);
+    color: var(--white);
+} 
+#remove:hover{
+    background-color:  var(--alizarin);
+    color: var(--white);
+    text-decoration: none;
+}

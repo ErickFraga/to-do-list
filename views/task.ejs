@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/task.css">
+    <title><%= task.title %></title>
+</head>
+<body class="bg-grey">
+    <header class="bg-dark ">
+        <div class="col-70">
+            <a href="/">
+                <h1 class="color-white"> Voltar</h1>
+            </a>
+        </div>
+
+
+        <div id="main" class="col-30" margin="auto 0" >
+            
+            <a href="/turn/<%= task.id %>">
+                <div id="status" class="link col-50 bg-grey <%= task.status? 'color-green': 'color-red'%>">
+                    <%= task.status ? 'ok' : 'not ok'%>
+                </div>
+            </a>
+            
+            <a href="/remove/<%= task.id %>">
+                <div id="remove" class="link col-30 bg-grey" >
+                    Excluir
+                </div>
+            </a>
+          
+        </div>
+
+    </header>
+    <div class="col-100 bg-grey">
+        <h1 id="title">
+            <%= task.title %> 
+        </h1>
+        <h3 id="description">
+            <%= task.description %> 
+        </h3>
+
+    </div>
+</body>
+</html>

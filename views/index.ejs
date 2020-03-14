@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet"href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="bg-dark">
+        <div class="col-100">
+            <h1 class="color-white">
+                <%= title %>
+            </h1>
+        </div>
+    </header>
+    <section>
+        <div class="col-30 bg-grey">
+            <form action="/add" method="post">
+                <legend>Incuir nova tarefa</legend>
+                <input type="text" name="title" placeholder="Título">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Descrição"></textarea>
+                <button type="submit">+ Adicionar</button>
+            </form>
+        </div>
+        
+        <div class="col-70">
+            <table>
+                <tbody>
+                    <% for( let i = 0; i < tasks.length; i++ ) { %>
+                        <tr>
+                            
+                            <td>#<%= i+1 %> 
+                                <a href="/task/<%= tasks[i]._id %> ">
+                                    <strong>
+                                        <%=tasks[i].title%>
+                                    </strong>
+                                </a>
+                            </td>
+                            <td class="actions">
+                                <a href="/turn/<%= tasks[i]._id %>/" class="<%= tasks[i].status ? '': 'color-red'%>">
+                                    <%= tasks[i].status ? "Ok": "Not Ok"%>
+                                </a>
+                                <a href="/remove/<%= tasks[i]._id %>" class="color-red"><strong>X</strong></a>
+                            </td>
+                            <td class="highlight"><%= tasks[i].description.replace(tasks[i].description[0], tasks[i].description[0].toUpperCase()) %> </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</body>
+</html>
